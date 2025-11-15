@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TC Siamisang - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        .grid-pattern {
+            background-image: 
+                linear-gradient(to right, #1e293b 1px, transparent 1px),
+                linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+            background-size: 4rem 4rem;
+            mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, #000 70%, transparent 110%);
+            opacity: 0.2;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-950">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <button onclick="scrollToSection('home')" class="flex items-center gap-2 text-white font-bold text-xl hover:scale-105 transition-transform">
+                    <i class="fas fa-code text-blue-500 text-xl"></i>
+                    <span class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+                        TC Siamisang
+                    </span>
+                </button>
+
+                <div class="hidden md:flex items-center gap-1">
+                    <button onclick="scrollToSection('home')" class="px-4 py-2 text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50">Home</button>
+                    <button onclick="scrollToSection('about')" class="px-4 py-2 text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50">About</button>
+                    <button onclick="scrollToSection('skills')" class="px-4 py-2 text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50">Skills</button>
+                    <button onclick="scrollToSection('experience')" class="px-4 py-2 text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50">Experience</button>
+                    <button onclick="scrollToSection('projects')" class="px-4 py-2 text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50">Projects</button>
+                    <button onclick="scrollToSection('contact')" class="px-4 py-2 text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50">Contact</button>
+                </div>
+
+                <button onclick="toggleMenu()" class="md:hidden text-white p-2 hover:bg-slate-800 rounded-lg transition-colors">
+                    <i id="menu-icon" class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-800">
+            <div class="px-4 py-4 space-y-2">
+                <button onclick="scrollToSection('home')" class="block w-full text-left px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors">Home</button>
+                <button onclick="scrollToSection('about')" class="block w-full text-left px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors">About</button>
+                <button onclick="scrollToSection('skills')" class="block w-full text-left px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors">Skills</button>
+                <button onclick="scrollToSection('experience')" class="block w-full text-left px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors">Experience</button>
+                <button onclick="scrollToSection('projects')" class="block w-full text-left px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors">Projects</button>
+                <button onclick="scrollToSection('contact')" class="block w-full text-left px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors">Contact</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+            <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s"></div>
+        </div>
+
+        <div class="absolute inset-0 grid-pattern"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center space-y-8">
+                <div class="relative inline-block fade-in">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
+                        <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
+                            <span class="text-5xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+                                TS
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4 fade-in">
+                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-white">
+                        Tshiamo Collen <span class="bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 text-transparent bg-clip-text">Siamisang</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl md:text-3xl text-slate-300 font-light">
+                        Software Developer & System Analyst
+                    </p>
+                    <p class="max-w-2xl mx-auto text-slate-400 text-lg">
+                        Crafting robust software solutions with expertise in full-stack development, 
+                        technical programming, and system architecture
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-4 text-slate-400 text-sm fade-in">
+                    <a href="mailto:tcsiamisang@gmail.com" class="flex items-center gap-2 hover:text-blue-400 transition-colors">
+                        <i class="fas fa-envelope"></i>
+                        tcsiamisang@gmail.com
+                    </a>
+                    <a href="tel:0794507240" class="flex items-center gap-2 hover:text-blue-400 transition-colors">
+                        <i class="fas fa-phone"></i>
+                        079 450 7240
+                    </a>
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Kimberley, South Africa
+                    </span>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-4 fade-in">
+                    <button onclick="scrollToSection('contact')" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg shadow-blue-500/50 px-6 py-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </button>
+                    <button class="border border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white px-6 py-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </button>
+                </div>
+
+                <div class="flex items-center justify-center gap-4 fade-in">
+                    <a href="https://linkedin.com/in/tshiamo-siamisang-668380100" target="_blank" class="p-3 bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white rounded-full transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/tcsiamisang" target="_blank" class="p-3 bg-slate-800 hover:bg-purple-600 text-slate-300 hover:text-white rounded-full transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    About <span class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Me</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 fade-in">
+                    <h3 class="text-3xl font-bold text-white">
+                        Dedicated Software Developer
+                    </h3>
+                    <p class="text-slate-400 text-lg leading-relaxed">
+                        I'm a dedicated and detail-oriented Software Developer with extensive experience in software design, 
+                        development, and maintenance. Currently serving as a Junior Software Developer at the State Information 
+                        Technology Agency (SITA), where I focus on delivering robust software solutions.
+                    </p>
+                    <p class="text-slate-400 text-lg leading-relaxed">
+                        My expertise spans across technical programming, systems software, and implementing IT solutions that 
+                        enhance service delivery. I'm proficient in managing the full software development lifecycle.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="relative group fade-in">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition-opacity"></div>
+                        <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300">
+                            <i class="fas fa-code text-blue-500 text-2xl mb-4"></i>
+                            <h4 class="text-2xl font-bold text-white mb-2">5+ Years</h4>
+                            <p class="text-slate-400 text-sm">Development Experience</p>
+                        </div>
+                    </div>
+                    <div class="relative group fade-in">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition-opacity"></div>
+                        <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300">
+                            <i class="fas fa-server text-blue-500 text-2xl mb-4"></i>
+                            <h4 class="text-2xl font-bold text-white mb-2">Full Stack</h4>
+                            <p class="text-slate-400 text-sm">Development Expertise</p>
+                        </div>
+                    </div>
+                    <div class="relative group fade-in">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition-opacity"></div>
+                        <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300">
+                            <i class="fas fa-database text-blue-500 text-2xl mb-4"></i>
+                            <h4 class="text-2xl font-bold text-white mb-2">System Design</h4>
+                            <p class="text-slate-400 text-sm">Architecture & Analysis</p>
+                        </div>
+                    </div>
+                    <div class="relative group fade-in">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition-opacity"></div>
+                        <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300">
+                            <i class="fas fa-layer-group text-blue-500 text-2xl mb-4"></i>
+                            <h4 class="text-2xl font-bold text-white mb-2">SDLC</h4>
+                            <p class="text-slate-400 text-sm">Complete Lifecycle Management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="relative py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Skills & <span class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Expertise</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    A comprehensive set of technical and soft skills honed through years of experience
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="skills-container">
+                <!-- Skills will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="relative py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Work <span class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Experience</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    A journey of continuous growth and professional development
+                </p>
+            </div>
+
+            <div class="relative">
+                <div class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-transparent"></div>
+
+                <div class="space-y-12" id="experience-container">
+                    <!-- Experience items will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="relative py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Featured <span class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Projects</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Some of the projects I've worked on showcasing my skills and expertise
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-container">
+                <!-- Projects will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Get In <span class="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">Touch</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Have a project in mind or want to discuss opportunities? Let's connect!
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-8 fade-in">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <a href="mailto:tcsiamisang@gmail.com" class="block">
+                                <div class="relative bg-slate-900 border border-slate-800 rounded-xl p-4 hover:border-slate-700 transition-all duration-300 flex items-center gap-4">
+                                    <div class="p-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-slate-500 text-sm">Email</p>
+                                        <p class="text-white font-medium">tcsiamisang@gmail.com</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="tel:0794507240" class="block">
+                                <div class="relative bg-slate-900 border border-slate-800 rounded-xl p-4 hover:border-slate-700 transition-all duration-300 flex items-center gap-4">
+                                    <div class="p-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500">
+                                        <i class="fas fa-phone text-white"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-slate-500 text-sm">Phone</p>
+                                        <p class="text-white font-medium">079 450 7240</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="relative bg-slate-900 border border-slate-800 rounded-xl p-4 flex items-center gap-4">
+                                <div class="p-3 rounded-lg bg-gradient-to-r from-green-500 to-emerald-500">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-500 text-sm">Location</p>
+                                    <p class="text-white font-medium">Kimberley, South Africa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">Connect With Me</h3>
+                        <div class="flex gap-4">
+                            <a href="https://linkedin.com/in/tshiamo-siamisang-668380100" target="_blank" class="p-4 bg-slate-900 border border-slate-800 hover:border-blue-500 rounded-xl transition-all duration-300 hover:scale-110">
+                                <i class="fab fa-linkedin text-blue-500 text-xl"></i>
+                            </a>
+                            <a href="https://github.com/tcsiamisang" target="_blank" class="p-4 bg-slate-900 border border-slate-800 hover:border-purple-500 rounded-xl transition-all duration-300 hover:scale-110">
+                                <i class="fab fa-github text-purple-500 text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <form onsubmit="handleSubmit(event)" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <input type="text" id="name" placeholder="Your Name" required class="bg-slate-900 border border-slate-800 text-white placeholder:text-slate-500 px-3 py-2 rounded-lg w-full">
+                            <input type="email" id="email" placeholder="Your Email" required class="bg-slate-900 border border-slate-800 text-white placeholder:text-slate-500 px-3 py-2 rounded-lg w-full">
+                        </div>
+                        <input type="text" id="subject" placeholder="Subject" class="bg-slate-900 border border-slate-800 text-white placeholder:text-slate-500 px-3 py-2 rounded-lg w-full">
+                        <textarea id="message" placeholder="Your Message" required rows="6" class="bg-slate-900 border border-slate-800 text-white placeholder:text-slate-500 resize-none px-3 py-2 rounded-lg w-full"></textarea>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg shadow-blue-500/50 px-6 py-3 rounded-lg flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative py-8 bg-slate-950 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center justify-center gap-4 text-center">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-code text-blue-500"></i>
+                    <span class="text-slate-400">Tshiamo Collen Siamisang</span>
+                </div>
+                <p class="text-slate-500 text-sm flex items-center gap-2">
+                    Made with <i class="fas fa-heart text-red-500"></i> and passion
+                </p>
+                <p class="text-slate-600 text-xs">
+                    © <span id="current-year"></span> All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Skills data
+        const skillCategories = [
+            {
+                icon: 'fa-code',
+                title: 'Software Development',
+                color: 'from-blue-500 to-cyan-500',
+                skills: ['Full Stack Development', 'Technical Programming', 'Code Architecture', 'Design Patterns']
+            },
+            {
+                icon: 'fa-database',
+                title: 'Systems & Database',
+                color: 'from-purple-500 to-pink-500',
+                skills: ['Systems Software', 'Database Design', 'Data Management', 'System Integration']
+            },
+            {
+                icon: 'fa-cloud',
+                title: 'IT Solutions',
+                color: 'from-green-500 to-emerald-500',
+                skills: ['IT Implementation', 'Software Migration', 'UAT Preparation', 'Deployment']
+            },
+            {
+                icon: 'fa-code-branch',
+                title: 'Development Tools',
+                color: 'from-orange-500 to-red-500',
+                skills: ['Version Control', 'CI/CD', 'Testing', 'Documentation']
+            },
+            {
+                icon: 'fa-terminal',
+                title: 'Technical Skills',
+                color: 'from-yellow-500 to-orange-500',
+                skills: ['Problem Solving', 'Debugging', 'Performance Optimization', 'Security']
+            },
+            {
+                icon: 'fa-cubes',
+                title: 'Soft Skills',
+                color: 'from-indigo-500 to-blue-500',
+                skills: ['Team Collaboration', 'Communication', 'Attention to Detail', 'Project Management']
+            }
+        ];
+
+        // Experience data
+        const experiences = [
+            {
+                title: 'Junior Software Developer',
+                company: 'State Information Technology Agency (SITA)',
+                period: 'November 2020 - Present',
+                description: [
+                    'Design and develop integrated technical Service Specifications for single or multiple software solutions',
+                    'Manage full software development lifecycle ensuring standardization and high-quality delivery',
+                    'Coordinate IT solutions implementations including software migration and deployment',
+                    'Maintain integrated IT software systems with proactive error identification and resolution'
+                ],
+                color: 'from-blue-500 to-cyan-500'
+            },
+            {
+                title: 'Software Developer and System Analyst - Trainee',
+                company: 'State Information Technology Agency (SITA)',
+                period: 'November 2019 - October 2020',
+                description: [
+                    'Developed integrated Technical Service Specifications under supervision',
+                    'Participated in full lifecycle software development and customization',
+                    'Assisted in UAT preparation and software deployment processes',
+                    'Contributed to system maintenance and software updates'
+                ],
+                color: 'from-purple-500 to-pink-500'
+            },
+            {
+                title: 'Software Developer and System Analyst - Intern',
+                company: 'State Information Technology Agency (SITA)',
+                period: 'November 2018 - October 2019',
+                description: [
+                    'Gained hands-on experience in software design and development',
+                    'Supported software implementation and migration projects',
+                    'Learned best practices in software testing and quality assurance',
+                    'Assisted in maintaining IT systems and resolving technical issues'
+                ],
+                color: 'from-green-500 to-emerald-500'
+            },
+            {
+                title: 'LAN and Desktop Support Technician',
+                company: 'Kuruman Cleaning Services / Ramzo Mining Group',
+                period: 'April 2018 - October 2018',
+                description: [
+                    'Installed and configured computer hardware, software systems, and networks',
+                    'Provided timely technical support across the organization',
+                    'Diagnosed and resolved software and hardware incidents',
+                    'Managed IT assets and maintained equipment inventory'
+                ],
+                color: 'from-orange-500 to-red-500'
+            },
+            {
+                title: 'LAN and Desktop Support Technician - Intern',
+                company: 'Statistics South Africa (Springbok Office)',
+                period: 'April 2017 - March 2018',
+                description: [
+                    'Provided first-line IT support for hardware and software issues',
+                    'Managed IT asset control and inventory',
+                    'Installed and configured Windows Operating Systems',
+                    'Performed network configuration and troubleshooting'
+                ],
+                color: 'from-yellow-500 to-orange-500'
+            }
+        ];
+
+        // Projects data
+        const projects = [
+            {
+                id: 1,
+                title: 'Portfolio Website',
+                description: 'A modern responsive portfolio built with React and Tailwind CSS',
+                technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
+                featured: true,
+                image_url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop',
+                demo_url: '#',
+                github_url: '#'
+            },
+            {
+                id: 2,
+                title: 'Henrietta Stockdale Nursing College',
+                description: 'SMIS is an administration system that manages nursing college students from online applications up until graduations, generate reports, manage remedials and also manage student leave.',
+                technologies: ['Java ee', 'Maven', 'MySql','WildFly','Css3','JPA','xhtml','Subversion','Primefaces','Javascript'],
+                featured: true,
+                image_url: './images/hsnc_app.png',
+                demo_url: '#',
+                github_url: '#'
+            },
+            {
+                id: 3,
+                title: 'eRehab Application',
+                description: 'A comprehensive rehabilitation management system designed to streamline service user care, treatment plans, and progress tracking for healthcare facilities.',
+                technologies: ['Java ee', 'Maven', 'MySql','WildFly','Css3','JPA','xhtml','Subversion','Primefaces','Javascript'],
+                featured: true,
+                image_url: './images/eRehab_app.png',
+                demo_url: '#',
+                github_url: '#'
+            }
+        ];
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Load content
+            loadSkills();
+            loadExperience();
+            loadProjects();
+            
+            // Initialize scroll effects
+            initScrollEffects();
+            
+            // Show initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    el.classList.add('visible');
+                });
+            }, 100);
+        });
+
+        function loadSkills() {
+            const container = document.getElementById('skills-container');
+            container.innerHTML = skillCategories.map((category, index) => `
+                <div class="relative group fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                    <div class="relative bg-slate-950 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition-all duration-300 h-full">
+                        <div class="inline-flex p-3 rounded-xl bg-gradient-to-r ${category.color} mb-4">
+                            <i class="${category.icon} text-white text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">${category.title}</h3>
+                        <ul class="space-y-2">
+                            ${category.skills.map(skill => `
+                                <li class="flex items-center text-slate-400">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-gradient-to-r ${category.color} mr-2"></div>
+                                    ${skill}
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadExperience() {
+            const container = document.getElementById('experience-container');
+            container.innerHTML = experiences.map((exp, index) => `
+                <div class="relative flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} fade-in">
+                    <div class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg shadow-blue-500/50 z-10"></div>
+
+                    <div class="w-full lg:w-[calc(50%-2rem)] ${index % 2 === 0 ? 'lg:pr-16' : 'lg:pl-16'}">
+                        <div class="relative group">
+                            <div class="absolute inset-0 bg-gradient-to-r ${exp.color} rounded-2xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                            <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition-all duration-300">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="p-2 rounded-lg bg-gradient-to-r ${exp.color}">
+                                            <i class="fas fa-briefcase text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white">${exp.title}</h3>
+                                            <p class="text-slate-400">${exp.company}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
+                                    <i class="fas fa-calendar"></i>
+                                    ${exp.period}
+                                </div>
+                                <ul class="space-y-2">
+                                    ${exp.description.map(item => `
+                                        <li class="flex items-start text-slate-400 text-sm">
+                                            <div class="w-1.5 h-1.5 rounded-full bg-gradient-to-r ${exp.color} mr-2 mt-2 flex-shrink-0"></div>
+                                            <span>${item}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadProjects() {
+            const container = document.getElementById('projects-container');
+            container.innerHTML = projects.map(project => `
+                <div class="relative group fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                    <div class="relative bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all duration-300 h-full flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="${project.image_url}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60"></div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-white mb-2">${project.title}</h3>
+                            <p class="text-slate-400 text-sm mb-4 flex-1">${project.description}</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                ${project.technologies.map(tech => `
+                                    <span class="px-2 py-1 text-xs bg-slate-800 text-slate-300 rounded-md">${tech}</span>
+                                `).join('')}
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="${project.demo_url}" class="flex-1">
+                                    <button class="w-full border border-slate-700 hover:bg-slate-800 text-slate-300 px-3 py-2 rounded-lg text-sm flex items-center justify-center gap-2">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Demo
+                                    </button>
+                                </a>
+                                <a href="${project.github_url}" class="flex-1">
+                                    <button class="w-full border border-slate-700 hover:bg-slate-800 text-slate-300 px-3 py-2 rounded-lg text-sm flex items-center justify-center gap-2">
+                                        <i class="fab fa-github"></i>
+                                        Code
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                toggleMenu(false);
+            }
+        }
+
+        function toggleMenu(forceClose = null) {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (forceClose === true) {
+                menu.classList.add('hidden');
+                icon.className = 'fas fa-bars text-xl';
+            } else {
+                menu.classList.toggle('hidden');
+                icon.className = menu.classList.contains('hidden') ? 'fas fa-bars text-xl' : 'fas fa-times text-xl';
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Simulate form submission
+            const button = event.target.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                alert('Message sent successfully! I\'ll get back to you soon.');
+                event.target.reset();
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 2000);
+        }
+
+        function initScrollEffects() {
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-slate-950/95', 'backdrop-blur-lg', 'shadow-lg');
+                    navbar.classList.remove('bg-transparent');
+                } else {
+                    navbar.classList.remove('bg-slate-950/95', 'backdrop-blur-lg', 'shadow-lg');
+                    navbar.classList.add('bg-transparent');
+                }
+                
+                // Fade in elements on scroll
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        el.classList.add('visible');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
